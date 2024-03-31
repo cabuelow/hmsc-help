@@ -38,7 +38,7 @@ Model 2 summary of estimated b1 coefficients:
 |B[Fire_severity (C2), spp4 (S4)]| -0.05475742 |
 |B[Fire_severity (C2), spp5 (S5)] | 0.71697044|
 
-In fact, the mean estimate of b1 coefficients for spp2 and spp3 have switched signs from the expected 'known truth' when the spatial random effect is included in the model.
+In fact, the mean estimate of b1 coefficients for spp2 and spp4 have switched signs from the expected 'known truth' when the spatial random effect is included in the model.
 
 Is the deviation from the 'known truths' in the spatial model because the b1 coefficients are no longer interpreted as the change in mean species abundance expected with a one unit shift in X (Fire severity), but rather the change in mean species abundance given a one unit shift in Fire severity *conditional* on the spatial random effect?
 
