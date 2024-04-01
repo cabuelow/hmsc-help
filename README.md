@@ -16,7 +16,7 @@ Here are the simulated 'known truths' for the slope beta coefficients representi
 |spp4 | 0.09531018|
 |spp5 | 0.69314718|
 
-Model 1 (with a non-spatial random effect) recovered beta 1 coefficients closer to these values than Model 2 (with a spatial random effect):
+Both models provide coefficient estimates slightly biased from the simulated 'known truths'. Also, the mean value of the alpha parameter estimated by the spatial Model 2 is 0.18, but was simulated to be 0.35. 
 
 Model 1 summary of estimated b1 coefficients:
 
@@ -37,8 +37,6 @@ Model 2 summary of estimated b1 coefficients:
 | B[Fire_severity (C2), spp3 (S3)]|  -0.1580849 | 
 | B[Fire_severity (C2), spp4 (S4)] |  0.2176851 | 
 | B[Fire_severity (C2), spp5 (S5)] |  0.6902558 | 
-
-Both models provide coefficient estimates slightly biased from the simulated 'known truths'. Also, the mean value of the alpha parameter estimated by the spatial Model 2 is 0.18, but was simulated to be 0.35. 
 
 Is there anything I can do to improve parameter estimation by these models to get closer to the 'known truths'? The mcmc convergence diagnostics (gelman-rubin psrf and effective sample sizes) all indicate that mcmc sampling is adequate.
 
