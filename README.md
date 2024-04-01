@@ -16,7 +16,7 @@ Here are the simulated 'known truths' for the slope beta coefficients representi
 |spp4 | 0.09531018|
 |spp5 | 0.69314718|
 
-Both models provide coefficient estimates slightly biased from the simulated 'known truths'. Also, the mean value of the alpha parameter estimated by the spatial Model 2 is 0.18, but was simulated to be 0.35. 
+Both models provide coefficient estimates slightly biased from the simulated 'known truths'. And the mean value of the alpha parameter estimated by the spatial Model 2 is 0.18, but was simulated to be 0.35. 
 
 Model 1 summary of estimated b1 coefficients:
 
@@ -38,6 +38,6 @@ Model 2 summary of estimated b1 coefficients:
 | B[Fire_severity (C2), spp4 (S4)] |  0.2176851 | 
 | B[Fire_severity (C2), spp5 (S5)] |  0.6902558 | 
 
-Is there anything I can do to improve parameter estimation by these models to get closer to the 'known truths'? The mcmc convergence diagnostics (gelman-rubin psrf and effective sample sizes) all indicate that mcmc sampling is adequate.
+I wanted to check my interpretation is correct, but I assume that the b1 coefficients should interpreted as the expected change in mean species abundance given a one unit shift in Fire severity *conditional* on the random effect (rather than the change in mean species abundance expected with a one unit shift in X (Fire severity))?
 
-I was also wondering if the interpretation of the b1 coefficient changes when the model includes either a non-spatial or a spatial site-level random effect. Rather than the change in mean species abundance expected with a one unit shift in X (Fire severity), should they be interpreted as the change in mean species abundance given a one unit shift in Fire severity *conditional* on the random effect?
+I also wondered if there is anything I can do to improve estimation of the alpha parameter by the spatial model 2, to get closer to the known truth of 0.35 (instead of the estimated mean value of 0.18). I left the number of latent factors to the default setting (returning 5).
