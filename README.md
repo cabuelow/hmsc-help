@@ -22,24 +22,24 @@ Model 1 summary of estimated b1 coefficients:
 
   |                              |      Mean     |
   |------|------|
-|B[Fire_severity (C2), spp1 (S1)] |-0.77439142 |
-|B[Fire_severity (C2), spp2 (S2)]| -0.07943399 |
-|B[Fire_severity (C2), spp3 (S3)] | 0.09497635 |
-|B[Fire_severity (C2), spp4 (S4)]|  0.01570744 |
-|B[Fire_severity (C2), spp5 (S5)] | 0.69535776|
+ |B[Fire_severity (C2), spp1 (S1)]  |-0.8731268 |
+ |B[Fire_severity (C2), spp2 (S2)] | -0.1009772 |
+ |B[Fire_severity (C2), spp3 (S3)]  |-0.1928004 |
+ |B[Fire_severity (C2), spp4 (S4)]   |0.2030243 |
+ |B[Fire_severity (C2), spp5 (S5)]  | 0.6712431 |
 
 Model 2 summary of estimated b1 coefficients:
 
 |                              |      Mean|
   |------|------|
-|B[Fire_severity (C2), spp1 (S1)]| -0.73044569 |
-|B[Fire_severity (C2), spp2 (S2)] | 0.04536074 |
-|B[Fire_severity (C2), spp3 (S3)]| -0.02598279 |
-|B[Fire_severity (C2), spp4 (S4)]| -0.05475742 |
-|B[Fire_severity (C2), spp5 (S5)] | 0.71697044|
+| B[Fire_severity (C2), spp1 (S1)] | -0.9392138| 
+| B[Fire_severity (C2), spp2 (S2)] | -0.1949200 | 
+| B[Fire_severity (C2), spp3 (S3)]|  -0.1580849 | 
+| B[Fire_severity (C2), spp4 (S4)] |  0.2176851 | 
+| B[Fire_severity (C2), spp5 (S5)] |  0.6902558 | 
 
-In fact, the mean estimate of b1 coefficients for spp2 and spp4 have switched signs from the expected 'known truth' when the spatial random effect is included in the model.
+Both models provide coefficient estimates slightly biased from the simulated 'known truths'. Also, the mean value of the alpha parameter estimated by the spatial Model 2 is 0.18, but was simulated to be 0.35. 
 
-Is the deviation from the 'known truths' in the spatial model because the b1 coefficients are no longer interpreted as the change in mean species abundance expected with a one unit shift in X (Fire severity), but rather the change in mean species abundance given a one unit shift in Fire severity *conditional* on the spatial random effect?
+Is there anything I can do to improve parameter estimation by these models to get closer to the 'known truths'? The mcmc convergence diagnostics (gelman-rubin psrf and effective sample sizes) all indicate that mcmc sampling is adequate.
 
-Is it possible to estimate from the 'known truths' of the simulated data set what we would expect the model to recover if it contains a spatial random effect? I checked the alpha parameter, and the spatial model does estimate the scale of autocorrelation correctly (0.35).
+I was also wondering if the interpretation of the b1 coefficient changes when the model includes either a non-spatial or a spatial site-level random effect. Rather than the change in mean species abundance expected with a one unit shift in X (Fire severity), should they be interpreted as the change in mean species abundance given a one unit shift in Fire severity *conditional* on the random effect?

@@ -46,7 +46,7 @@ m <- Hmsc(Y = as.matrix(df[,3:7]),
           ranLevels = list(sample = rL))
 
 # fit the model with MCMC sampling
-#m_fit <- sampleMcmc(m, nChains = 4, samples = 1000, thin = 100, transient = 2500, verbose = F, nParallel = 4)
+m_fit <- sampleMcmc(m, nChains = 4, samples = 1000, thin = 100, transient = 2500, verbose = F, nParallel = 4)
 #saveRDS(m_fit, 'model_100thinning_mult.rds')
 m_fit <- readRDS('model_100thinning_mult.rds')
 mpost <- convertToCodaObject(m_fit)
@@ -69,8 +69,9 @@ m <- Hmsc(Y = as.matrix(df[,3:7]),
           ranLevels = list(sample = rL.spatial))
 
 # fit the model with MCMC sampling
-#m_fit <- sampleMcmc(m, nChains = 4, samples = 1000, thin = 100, transient = 2500, verbose = F, nParallel = 4)
+m_fit <- sampleMcmc(m, nChains = 4, samples = 1000, thin = 100, transient = 2500, verbose = T, nParallel = 4)
 #saveRDS(m_fit, 'model_100thinning_mult_spatial.rds')
 m_fit <- readRDS('model_100thinning_mult_spatial.rds')
 mpost <- convertToCodaObject(m_fit)
 summary(mpost$Beta)$statistics
+summary(mpost$Alpha[[1]])$statistics
